@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Japan - Dispute Resolution | IDRS</title>
-    <link rel="stylesheet" href="../../css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Japan - Dispute Resolution | IDRS</title>
+  <meta name="description" content="IDRS dispute resolution jurisdictional considerations for Japan.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
-    <nav aria-label="Main navigation">
+
+  <div class="top-bar"><span>Investigate</span> &nbsp;&middot;&nbsp; <span>Determine</span> &nbsp;&middot;&nbsp; <span>Resolve</span></div>
+
+  <header id="site-header">
+    <div class="header-inner">
+      <a href="../../index.html" class="logo" aria-label="IDRS Home">
+        <div class="logo-mark">IDRS</div>
+        <div class="logo-text"><span class="brand">IDRS</span><span class="tagline">International Dispute Resolution Services</span></div>
+      </a>
+      <div class="header-divider"></div>
+      <button class="nav-toggle" onclick="document.querySelector('nav ul').classList.toggle('open')" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      <nav aria-label="Main navigation">
         <ul>
           <li><a href="../../index.html">Home</a></li>
           <li><a href="../about.html">About</a></li>
-          <li class="has-dropdown"><a href="#">Services</a>
+          <li class="has-dropdown"><a href="#">Services <span class="dropdown-arrow"></span></a>
             <ul class="dropdown">
               <li><a href="../expert-determination.html">Expert Determination</a></li>
               <li><a href="../arbitration.html">Arbitration</a></li>
@@ -21,20 +36,21 @@
               <li><a href="../adjudication.html">Adjudication</a></li>
             </ul>
           </li>
-          <li><a href="../jurisdictions.html">Jurisdictions</a></li>
+          <li><a href="../jurisdictions.html" class="active">Jurisdictions</a></li>
           <li class="nav-cta"><a href="../contact.html">Contact</a></li>
         </ul>
       </nav>
+    </div>
+  </header>
 
-    <header class="page-hero page-hero--about">
-        <div class="container">
-            <p class="eyebrow">Jurisdictional Considerations</p>
-            <h1>Japan</h1>
-        </div>
-    </header>
+  <section class="page-hero page-hero--about">
+    <div class="container">
+      <div class="eyebrow">Jurisdictional Considerations</div>
+      <h1>Japan</h1>
+    </div>
+  </section>
 
-    <main>
-        <section class="content-section">
+  <section class="content-section">
             <div class="container">
                 <h2>Dispute Resolution Framework</h2>
 
@@ -94,37 +110,25 @@
             </div>
         </section>
 
-        <section class="related-jurisdictions">
-            <div class="container">
-                <h3>Related Jurisdictions</h3>
-                <ul>
-                    <li><a href="south-korea.html">South Korea</a></li>
-                    <li><a href="singapore.html">Singapore</a></li>
-                    <li><a href="hong-kong.html">Hong Kong</a></li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="cta-simple">
+  <section class="cta-simple">
             <div class="container">
                 <h2>Require Dispute Resolution Services?</h2>
                 <p>Our team of experienced practitioners in Japan can assist with arbitration, mediation, expert determination, and construction dispute resolution services.</p>
                 <a href="../contact.html" class="btn">Contact Us</a>
             </div>
         </section>
-    </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 International Dispute Resolution Services. All rights reserved.</p>
-            <nav>
-                <ul>
-                    <li><a href="../about.html">About</a></li>
-                    <li><a href="../contact.html">Contact</a></li>
-                    <li><a href="../privacy.html">Privacy</a></li>
-                </ul>
-            </nav>
-        </div>
-    </footer>
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><div class="brand">IDRS</div><p>International Dispute Resolution Services. Independent, expert dispute resolution for construction, infrastructure, and commercial disputes across the Asia-Pacific region.</p></div>
+        <div><h4>Services</h4><ul><li><a href="../expert-determination.html">Expert Determination</a></li><li><a href="../arbitration.html">Commercial Arbitration</a></li><li><a href="../mediation.html">Commercial Mediation</a></li><li><a href="../dispute-boards.html">Dispute Boards</a></li><li><a href="../conciliation.html">Conciliation</a></li><li><a href="../adjudication.html">Adjudication</a></li><li><a href="../jurisdictions.html">Jurisdictions</a></li></ul></div>
+        <div><h4>Quick Links</h4><ul><li><a href="../about.html">About IDRS</a></li><li><a href="../jurisdictions.html">Jurisdictions</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
+        <div><h4>Contact</h4><ul><li style="color:rgba(255,255,255,0.5);">Level 15, 225 George Street</li><li style="color:rgba(255,255,255,0.5);">Sydney, NSW 2000, Australia</li><li style="margin-top:10px;"><a href="tel:+61290579088">+61 (0) 2 9057 9088</a></li><li><a href="mailto:contact@idrs.com.au">contact@idrs.com.au</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">&copy; 2026 IDRS &mdash; International Dispute Resolution Services. All rights reserved.</div>
+    </div>
+  </footer>
+  <script>const header=document.getElementById('site-header');window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>20);}); document.querySelectorAll('.has-dropdown > a').forEach(a => { a.addEventListener('click', (e) => { if (window.innerWidth <= 768) { e.preventDefault(); a.parentElement.classList.toggle('open'); } }); });</script>
 </body>
 </html>
