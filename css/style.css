@@ -351,6 +351,8 @@ nav > ul > li.nav-cta > a:hover {
   padding: 28px 0;
   border-bottom: 1px solid #e2e6eb;
   transition: background 0.2s ease;
+  text-decoration: none;
+  color: inherit;
 }
 
 .jurisdiction-row:first-child {
