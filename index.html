@@ -32,11 +32,16 @@
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="pages/about.html">About</a></li>
-          <li><a href="pages/expert-determination.html">Determination</a></li>
-          <li><a href="pages/arbitration.html">Arbitration</a></li>
-          <li><a href="pages/mediation.html">Mediation</a></li>
-          <li><a href="pages/dispute-boards.html">Dispute Boards</a></li>
-          <li><a href="pages/conciliation.html">Conciliation</a></li>
+          <li class="has-dropdown"><a href="#">Services</a>
+            <ul class="dropdown">
+              <li><a href="pages/expert-determination.html">Expert Determination</a></li>
+              <li><a href="pages/arbitration.html">Arbitration</a></li>
+              <li><a href="pages/mediation.html">Mediation</a></li>
+              <li><a href="pages/dispute-boards.html">Dispute Boards</a></li>
+              <li><a href="pages/conciliation.html">Conciliation</a></li>
+              <li><a href="pages/adjudication.html">Adjudication</a></li>
+            </ul>
+          </li>
           <li><a href="pages/jurisdictions.html">Jurisdictions</a></li>
           <li class="nav-cta"><a href="pages/contact.html">Contact</a></li>
         </ul>
@@ -91,8 +96,13 @@
           <div class="service-desc">Independent conciliation combining facilitative and evaluative approaches, with informed assessment and settlement proposals where appropriate.</div>
           <div class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
         </a>
+        <a href="pages/adjudication.html" class="service-row">
+          <div class="service-name"><span class="num">06</span> Adjudication</div>
+          <div class="service-desc">Statutory adjudication and security of payment services across Australian jurisdictions — rapid, enforceable resolution of construction payment disputes.</div>
+          <div class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+        </a>
         <a href="pages/arbitration.html#expedited" class="service-row">
-          <div class="service-name"><span class="num">06</span> Expedited Arbitration</div>
+          <div class="service-name"><span class="num">07</span> Expedited Arbitration</div>
           <div class="service-desc">Streamlined procedure for disputes not exceeding USD 1,000,000 — final awards within six months with full due process safeguards.</div>
           <div class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
         </a>
@@ -260,6 +270,15 @@
     const header = document.getElementById('site-header');
     window.addEventListener('scroll', () => {
       header.classList.toggle('scrolled', window.scrollY > 20);
+    });
+    // Mobile dropdown toggle
+    document.querySelectorAll('.has-dropdown > a').forEach(a => {
+      a.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          a.parentElement.classList.toggle('open');
+        }
+      });
     });
   </script>
 
