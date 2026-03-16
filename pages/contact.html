@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — IDRS</title>
+  <meta name="description" content="Contact IDRS for arbitration, mediation, expert determination, and dispute board services across the Asia-Pacific region.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <div class="top-bar"><span>Investigate</span> &nbsp;&middot;&nbsp; <span>Determine</span> &nbsp;&middot;&nbsp; <span>Resolve</span></div>
+
+  <header id="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo" aria-label="IDRS Home">
+        <div class="logo-mark">IDRS</div>
+        <div class="logo-text"><span class="brand">IDRS</span><span class="tagline">International Dispute Resolution Services</span></div>
+      </a>
+      <div class="header-divider"></div>
+      <button class="nav-toggle" onclick="document.querySelector('nav ul').classList.toggle('open')" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="expert-determination.html">Determination</a></li>
+          <li><a href="arbitration.html">Arbitration</a></li>
+          <li><a href="mediation.html">Mediation</a></li>
+          <li><a href="dispute-boards.html">Dispute Boards</a></li>
+          <li><a href="conciliation.html">Conciliation</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero page-hero--contact">
+    <div class="container">
+      <div class="eyebrow">Contact</div>
+      <h1>Contact IDRS</h1>
+      <p>Discuss your dispute resolution requirements with our team.</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="container">
+      <div class="contact-grid">
+        <div>
+          <h2>Get in Touch</h2>
+          <p>Contact IDRS to discuss how our expertise in arbitration, mediation, expert determination, dispute boards, and conciliation can support your matter. We welcome enquiries from parties, legal representatives, and appointing bodies across the Asia-Pacific region.</p>
+
+          <div class="contact-info-block" style="margin-top:36px;">
+            <h3>Office Address</h3>
+            <p>Grosvenor Place<br>Level 15, 225 George Street<br>Sydney, NSW 2000<br>Australia</p>
+          </div>
+
+          <div class="contact-info-block">
+            <h3>Telephone</h3>
+            <p><a href="tel:+61290579088">+61 (0) 2 9057 9088</a></p>
+          </div>
+
+          <div class="contact-info-block">
+            <h3>Email</h3>
+            <p><a href="mailto:contact@idrs.com.au">contact@idrs.com.au</a></p>
+          </div>
+
+          <div class="contact-info-block">
+            <h3>Regions Served</h3>
+            <p>Australia, Hong Kong, Singapore, Malaysia, Japan, Thailand, Philippines, United Kingdom</p>
+          </div>
+        </div>
+
+        <div>
+          <h2>Enquiry Form</h2>
+          <form class="contact-form" action="#" method="post">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required autocomplete="name">
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+
+            <label for="phone">Telephone</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel">
+
+            <label for="service">Service of Interest</label>
+            <select id="service" name="service">
+              <option value="">Select a service...</option>
+              <option value="arbitration">Commercial Arbitration</option>
+              <option value="mediation">Commercial Mediation</option>
+              <option value="determination">Expert Determination</option>
+              <option value="dispute-boards">Dispute Boards</option>
+              <option value="conciliation">Conciliation</option>
+              <option value="expedited">Expedited Arbitration</option>
+              <option value="other">Other</option>
+            </select>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit" class="btn btn-teal" style="width:100%;">Submit Enquiry</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><div class="brand">IDRS</div><p>International Dispute Resolution Services. Independent, expert dispute resolution for construction, infrastructure, and commercial disputes across the Asia-Pacific region.</p></div>
+        <div><h4>Services</h4><ul><li><a href="expert-determination.html">Expert Determination</a></li><li><a href="arbitration.html">Commercial Arbitration</a></li><li><a href="mediation.html">Commercial Mediation</a></li><li><a href="dispute-boards.html">Dispute Boards</a></li><li><a href="conciliation.html">Conciliation</a></li></ul></div>
+        <div><h4>Quick Links</h4><ul><li><a href="about.html">About IDRS</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div><h4>Contact</h4><ul><li style="color:rgba(255,255,255,0.5);">Level 15, 225 George Street</li><li style="color:rgba(255,255,255,0.5);">Sydney, NSW 2000, Australia</li><li style="margin-top:10px;"><a href="tel:+61290579088">+61 (0) 2 9057 9088</a></li><li><a href="mailto:contact@idrs.com.au">contact@idrs.com.au</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">&copy; 2026 IDRS &mdash; International Dispute Resolution Services. All rights reserved.</div>
+    </div>
+  </footer>
+  <script>const header=document.getElementById('site-header');window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>20);});</script>
+</body>
+</html>
