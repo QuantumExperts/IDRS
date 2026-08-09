@@ -1,286 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IDRS — International Dispute Resolution Services</title>
-  <meta name="description" content="IDRS provides independent dispute resolution across the Asia-Pacific region — arbitration, mediation, expert determination, dispute boards, and conciliation for construction, infrastructure, and commercial disputes.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=5">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>International Dispute Resolution Services</title>
+<meta name="description" content="Independent international dispute resolution — arbitration, mediation, expert determination and adjudication for complex commercial, construction and infrastructure disputes.">
+<meta name="keywords" content="international dispute resolution, arbitration, mediation, expert determination, adjudication, expert witness, construction disputes">
+<link rel="canonical" href="https://www.internationaldisputeresolution.services/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="International Dispute Resolution Services">
+<meta property="og:description" content="Complex disputes, brought to resolution. Independent arbitration, mediation and expert determination.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"LegalService",
+  "name":"International Dispute Resolution Services",
+  "description":"Independent international dispute resolution — arbitration, mediation, expert determination and adjudication.",
+  "areaServed":["Asia-Pacific","Europe","Middle East"],
+  "serviceType":["Arbitration","Mediation","Expert Determination","Adjudication","Expert Witness"]
+}
+</script>
+<style>
+  :root{
+    --bg:#ffffff; --ink:#0b0b0b; --grey:#5f5f5f; --grey-2:#9a9a9a;
+    --line:rgba(11,11,11,.12); --line-2:rgba(11,11,11,.26);
+    --dark:#0b0b0b; --on-dark:#f4f4f2; --on-dark-mute:#8b8b88; --line-dark:rgba(244,244,242,.16);
+    --f:"Archivo",system-ui,sans-serif; --m:"IBM Plex Mono",ui-monospace,monospace;
+    --gut:clamp(22px,5vw,72px); --ease:cubic-bezier(.22,1,.36,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{background:var(--bg);color:var(--ink);font-family:var(--f);font-size:17px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--ink);color:var(--bg)}
+  .label{font-family:var(--m);font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--grey)}
+  h1,h2,h3{font-weight:700;line-height:1.0;letter-spacing:-0.025em}
+  .wrap{max-width:1300px;margin-inline:auto;padding-inline:var(--gut)}
+
+  /* scroll progress */
+  #prog{position:fixed;top:0;left:0;height:2px;width:0;background:var(--ink);z-index:60;transition:width .1s linear}
+
+  /* header */
+  header{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+    gap:20px;padding:20px var(--gut);border-bottom:1px solid transparent;transition:background .4s var(--ease),border-color .4s,padding .4s var(--ease)}
+  header.solid{background:rgba(255,255,255,.88);backdrop-filter:blur(12px) saturate(150%);border-color:var(--line);padding-block:14px}
+  .wordmark{display:inline-block;font-family:var(--f);font-size:clamp(14px,1.55vw,18px);font-weight:700;line-height:1.18;color:var(--ink)}
+  .wordmark span{display:block;width:max-content;white-space:nowrap}
+  header nav{display:flex;align-items:center;gap:34px}
+  header nav a{font-family:var(--m);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--grey);transition:color .3s;position:relative}
+  header nav a:not(.cta)::after{content:"";position:absolute;left:0;bottom:-5px;height:1px;width:0;background:var(--ink);transition:width .35s var(--ease)}
+  header nav a:not(.cta):hover::after{width:100%}
+  header nav a:hover{color:var(--ink)}
+  header nav a.cta{color:var(--ink);border:1px solid var(--line-2);padding:9px 16px;border-radius:2px;transition:.35s}
+  header nav a.cta:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+  .menu-btn{display:none;font-family:var(--m);font-size:11px;letter-spacing:.16em;text-transform:uppercase;background:none;border:1px solid var(--line-2);padding:9px 16px;color:var(--ink);cursor:pointer;border-radius:2px}
+  @media(max-width:820px){ header nav{display:none} .menu-btn{display:block} .wordmark{max-width:60vw} }
+
+  /* hero */
+  .hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:150px var(--gut) 64px;position:relative}
+  .hero .label{margin-bottom:38px}
+  .hero h1{font-size:clamp(2.7rem,8vw,7.4rem);font-weight:800;max-width:15ch;letter-spacing:-.03em}
+  .hero h1 .g{color:var(--grey-2)}
+  .hero p{max-width:46ch;color:var(--grey);font-size:clamp(1.02rem,1.4vw,1.24rem);margin-top:36px;line-height:1.55}
+  .hero .act{margin-top:48px}
+  .arrowlink{font-family:var(--m);font-size:12px;letter-spacing:.16em;text-transform:uppercase;display:inline-flex;align-items:center;gap:12px;color:var(--ink)}
+  .arrowlink .b{display:inline-block;width:36px;height:1px;background:var(--ink);transition:width .4s var(--ease)}
+  .arrowlink:hover .b{width:58px}
+  .hero .foot-line{position:absolute;left:var(--gut);right:var(--gut);bottom:32px;display:flex;justify-content:space-between;gap:16px;
+    border-top:1px solid var(--line);padding-top:18px}
+  .hero .foot-line span{font-family:var(--m);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-2)}
+  @media(max-width:820px){ .hero .foot-line{position:static;margin-top:64px;flex-direction:column;gap:8px} }
+
+  /* generic two-col */
+  .col2{display:grid;grid-template-columns:minmax(0,210px) 1fr;gap:clamp(24px,6vw,96px);align-items:start}
+  @media(max-width:820px){ .col2{grid-template-columns:1fr;gap:28px} }
+
+  .statement{padding:clamp(84px,14vw,180px) 0;border-top:1px solid var(--line)}
+  .statement h2{font-size:clamp(1.7rem,3.7vw,3.05rem);font-weight:600;letter-spacing:-.025em;line-height:1.14;max-width:24ch}
+  .statement h2 em{font-style:normal;color:var(--grey-2)}
+
+  /* register */
+  .register{padding-bottom:clamp(44px,8vw,96px)}
+  .register .head{display:flex;justify-content:space-between;align-items:end;padding-bottom:28px;border-bottom:1px solid var(--line-2)}
+  .register .head h2{font-size:clamp(1.35rem,2.4vw,2rem);font-weight:700}
+  .row{display:grid;grid-template-columns:66px minmax(0,1fr) minmax(0,1.45fr) 40px;gap:22px;align-items:baseline;
+    padding:clamp(24px,3.2vw,38px) 0;border-bottom:1px solid var(--line);position:relative;transition:padding-left .45s var(--ease)}
+  .row::after{content:"";position:absolute;left:0;bottom:-1px;height:1px;width:0;background:var(--ink);transition:width .55s var(--ease)}
+  .row:hover{padding-left:16px}
+  .row:hover::after{width:100%}
+  .row .n{font-family:var(--m);font-size:12px;color:var(--grey-2);letter-spacing:.1em}
+  .row .t{font-size:clamp(1.45rem,3vw,2.3rem);font-weight:700;letter-spacing:-.025em}
+  .row .d{color:var(--grey);font-size:.96rem;line-height:1.5}
+  .row .x{font-family:var(--m);color:var(--grey-2);text-align:right;transition:transform .45s var(--ease),color .3s}
+  .row:hover .x{transform:translateX(7px);color:var(--ink)}
+  @media(max-width:820px){ .row{grid-template-columns:44px 1fr;gap:8px 16px} .row .d{grid-column:2} .row .x{display:none} }
+
+  /* dark band */
+  .band{background:var(--dark);color:var(--on-dark);padding:clamp(96px,16vw,210px) 0}
+  .band .label{color:var(--on-dark-mute)}
+  .band h2{font-size:clamp(2.1rem,5.8vw,4.9rem);font-weight:800;letter-spacing:-.03em;line-height:1.0;max-width:20ch;margin-top:32px}
+  .band h2 .g{color:#454543}
+
+  /* reach — general regions only */
+  .reach{padding:clamp(84px,14vw,180px) 0;border-bottom:1px solid var(--line)}
+  .place{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:24px 0;border-top:1px solid var(--line)}
+  .place:first-child{border-top:0}
+  .place .nm{font-size:clamp(1.7rem,3.6vw,2.7rem);font-weight:700;letter-spacing:-.025em}
+  .place .sub{font-family:var(--m);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--grey-2);text-align:right}
+  @media(max-width:820px){ .place{flex-direction:column;gap:6px} .place .sub{text-align:left} }
+
+  /* enquiry */
+  .enquiry{padding:clamp(96px,16vw,210px) 0}
+  .enquiry h2{font-size:clamp(2.5rem,7.2vw,6.6rem);font-weight:800;letter-spacing:-.035em;max-width:13ch;margin-top:28px}
+  .enquiry p{color:var(--grey);max-width:44ch;margin-top:30px;font-size:1.12rem}
+  .enquiry .big{font-family:var(--m);font-size:13px;letter-spacing:.16em;text-transform:uppercase;margin-top:48px;
+    display:inline-flex;align-items:center;gap:16px;border:1px solid var(--ink);padding:22px 32px;transition:.4s var(--ease)}
+  .enquiry .big:hover{background:var(--ink);color:var(--bg);gap:22px}
+
+  /* footer */
+  footer{border-top:1px solid var(--line);padding:46px var(--gut) 42px}
+  .foot-grid{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:end}
+  footer .name{font-family:var(--m);font-size:12px;letter-spacing:.16em;text-transform:uppercase;max-width:30ch;line-height:1.5}
+  footer .meta{font-family:var(--m);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--grey-2);text-align:right;line-height:2}
+  footer .meta a{border-bottom:1px solid var(--line)}
+  footer .meta a:hover{color:var(--ink);border-color:var(--ink)}
+  @media(max-width:600px){ footer .meta{text-align:left} }
+  footer .meta a:hover{color:var(--ink)}
+
+  /* reveal */
+  .rv{opacity:0;transform:translateY(22px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+  .rv.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}}
+</style>
 </head>
 <body>
+<div id="prog"></div>
 
-  <div class="top-bar"></div>
+<header id="hdr">
+  <a class="wordmark" href="index.html"><span>International Dispute</span><span>Resolution Services</span></a>
+  <nav>
+    <a href="#capabilities">Capabilities</a>
+    <a href="#reach">Reach</a>
+    <a href="contact.html" class="cta">Enquire</a>
+  </nav>
+  <a class="menu-btn" href="contact.html">Enquire</a>
+</header>
 
-  <!-- Header -->
-  <header id="site-header">
-    <div class="header-inner">
-      <a href="index.html" class="logo" aria-label="IDRS Home">
-        <div class="logo-mark">IDRS</div>
-        <div class="logo-text">
-          <span class="brand">IDRS</span>
-          <span class="tagline">International Dispute Resolution Services</span>
-        </div>
-      </a>
-      <div class="header-divider"></div>
-      <button class="nav-toggle" onclick="document.querySelector('nav ul').classList.toggle('open')" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
-      <nav aria-label="Main navigation">
-        <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="pages/about.html">About</a></li>
-          <li class="has-dropdown"><a href="#">Services <span class="dropdown-arrow"></span></a>
-            <ul class="dropdown">
-              <li><a href="pages/expert-determination.html">Expert Determination</a></li>
-              <li><a href="pages/arbitration.html">Arbitration</a></li>
-              <li><a href="pages/mediation.html">Mediation</a></li>
-              <li><a href="pages/dispute-boards.html">Dispute Boards</a></li>
-              <li><a href="pages/conciliation.html">Conciliation</a></li>
-              <li><a href="pages/adjudication.html">Adjudication</a></li>
-            </ul>
-          </li>
-          <li><a href="pages/jurisdictions.html">Jurisdictions</a></li>
-          <li class="nav-cta"><a href="pages/contact.html">Contact</a></li>
-        </ul>
-      </nav>
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap" style="width:100%">
+    <div class="label rv in">Independent · International · Impartial</div>
+    <h1 class="rv in" style="transition-delay:.06s">Complex disputes,<br>brought to <span class="g">resolution.</span></h1>
+    <p class="rv in" style="transition-delay:.12s">Arbitration, mediation and expert determination for the most demanding commercial, construction and infrastructure disputes — resolved with authority.</p>
+    <div class="act rv in" style="transition-delay:.18s">
+      <a class="arrowlink" href="#capabilities">Explore the practice <span class="b"></span></a>
     </div>
-  </header>
+  </div>
+  <div class="foot-line">
+    <span>Established for complex matters</span>
+    <span>Asia-Pacific · Europe · Middle East</span>
+  </div>
+</section>
 
-  <!-- Hero — Editorial left-aligned over cityscape -->
-  <section class="hero">
-    <div class="hero-content container">
-      <div class="eyebrow">Asia-Pacific Dispute Resolution</div>
-      <h1>Independent. Expert.<br>Efficient Resolution.</h1>
-      <p>IDRS delivers specialist dispute resolution for construction, infrastructure, and commercial disputes across Australia, Asia, and the United Kingdom. Over twenty-five years of expertise in arbitration, mediation, expert determination, and adjudication.</p>
-      <div class="hero-cta">
-        <a href="pages/contact.html" class="btn btn-primary">Discuss Your Dispute</a>
-        <a href="#services" class="btn btn-secondary">Our Services</a>
-      </div>
+<!-- STATEMENT -->
+<section class="statement">
+  <div class="wrap col2">
+    <div class="label rv">§ 01 — Position</div>
+    <h2 class="rv" style="transition-delay:.05s">We resolve disputes that others find intractable. <em>Technically qualified, legally minded, and unswayed by either side</em> — the independent authority a serious matter requires.</h2>
+  </div>
+</section>
+
+<!-- REGISTER -->
+<section class="register" id="capabilities">
+  <div class="wrap">
+    <div class="head rv"><h2>The Practice</h2><span class="label">§ 02 — Capabilities</span></div>
+
+    <a class="row rv" href="contact.html">
+      <span class="n">00</span><span class="t">Arbitration</span>
+      <span class="d">Domestic and international proceedings under institutional and ad hoc rules, across common and civil law jurisdictions.</span>
+      <span class="x">→</span>
+    </a>
+    <a class="row rv" href="contact.html">
+      <span class="n">01</span><span class="t">Mediation</span>
+      <span class="d">Facilitated settlement of complex, high-value and relationship-critical commercial disputes.</span>
+      <span class="x">→</span>
+    </a>
+    <a class="row rv" href="contact.html">
+      <span class="n">02</span><span class="t">Expert Determination</span>
+      <span class="d">Efficient, confidential and binding determination of technical and quantum matters.</span>
+      <span class="x">→</span>
+    </a>
+    <a class="row rv" href="contact.html">
+      <span class="n">03</span><span class="t">Adjudication</span>
+      <span class="d">Rapid resolution of payment and contractual disputes under security of payment regimes.</span>
+      <span class="x">→</span>
+    </a>
+    <a class="row rv" href="contact.html">
+      <span class="n">04</span><span class="t">Expert Witness</span>
+      <span class="d">Independent evidence on quantum, delay, disruption and technical matters before tribunals and courts.</span>
+      <span class="x">→</span>
+    </a>
+  </div>
+</section>
+
+<!-- DARK BAND -->
+<section class="band">
+  <div class="wrap">
+    <div class="label rv">§ 03 — Method</div>
+    <h2 class="rv" style="transition-delay:.05s">Investigate. Determine.<br><span class="g">Resolve.</span></h2>
+  </div>
+</section>
+
+<!-- REACH (general regions only) -->
+<section class="reach" id="reach">
+  <div class="wrap col2">
+    <div class="label rv">§ 04 — Jurisdiction</div>
+    <div>
+      <div class="place rv"><span class="nm">Asia-Pacific</span><span class="sub">Domestic &amp; cross-border</span></div>
+      <div class="place rv"><span class="nm">Europe</span><span class="sub">Institutional &amp; ad hoc</span></div>
+      <div class="place rv"><span class="nm">Middle East</span><span class="sub">Commercial &amp; construction</span></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Services — Editorial stacked list -->
-  <section class="section" id="services">
-    <div class="container">
-      <div class="section-header">
-        <div class="eyebrow">Services</div>
-        <h2>Dispute Resolution Services</h2>
-        <p>Comprehensive resolution across every major forum, tailored to the complexity and value of each matter.</p>
-      </div>
-      <div class="services-list">
-        <a href="pages/expert-determination.html" class="service-row">
-          <div class="service-name"><span class="num">01</span> Expert Determination</div>
-          <div class="service-desc">Independent expert determination on technical matters — binding or non-binding, efficient, confidential, and cost-effective resolution.</div>
-          <div class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
-        </a>
-        <a href="pages/arbitration.html" class="service-row">
-          <div class="service-name"><span class="num">02</span> Commercial Arbitration</div>
-          <div class="service-desc">Streamlined arbitration delivering binding, enforceable awards for construction and commercial disputes with fixed-cost schemes available.</div>
-          <div class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
-        </a>
-        <a href="pages/mediation.html" class="service-row">
-          <div class="service-name"><span class="num">03</span> Commercial Mediation</div>
-          <div class="service-desc">Facilitated negotiation with deep construction expertise, enabling confidential voluntary settlements at lower cost and shorter timeframes.</div>
-          <div class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
-        </a>
-        <a href="pages/dispute-boards.html" class="service-row">
-          <div class="service-name"><span class="num">04</span> Dispute Boards</div>
-          <div class="service-desc">Standing and ad hoc boards for proactive dispute management through early intervention and continuous engagement throughout the contract period.</div>
-          <div class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
-        </a>
-        <a href="pages/conciliation.html" class="service-row">
-          <div class="service-name"><span class="num">05</span> Conciliation</div>
-          <div class="service-desc">Independent conciliation combining facilitative and evaluative approaches, with informed assessment and settlement proposals where appropriate.</div>
-          <div class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
-        </a>
-        <a href="pages/adjudication.html" class="service-row">
-          <div class="service-name"><span class="num">06</span> Adjudication</div>
-          <div class="service-desc">Statutory adjudication and security of payment services across Australian jurisdictions — rapid, enforceable resolution of construction payment disputes.</div>
-          <div class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
-        </a>
-        <a href="pages/arbitration.html#expedited" class="service-row">
-          <div class="service-name"><span class="num">07</span> Expedited Arbitration</div>
-          <div class="service-desc">Streamlined procedure for disputes not exceeding USD 1,000,000 — final awards within six months with full due process safeguards.</div>
-          <div class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
-        </a>
-      </div>
-    </div>
-  </section>
+<!-- ENQUIRY -->
+<section class="enquiry">
+  <div class="wrap">
+    <div class="label rv">§ 05 — Enquiries</div>
+    <h2 class="rv" style="transition-delay:.05s">Bring us the difficult one.</h2>
+    <p class="rv" style="transition-delay:.1s">Every serious matter begins with a confidential conversation. Tell us what you are facing.</p>
+    <div class="rv" style="transition-delay:.15s"><a class="big" href="contact.html">Make an enquiry <span>→</span></a></div>
+  </div>
+</section>
 
-  <!-- Process — Dark section -->
-  <section class="section section-dark">
-    <div class="container">
-      <div class="section-header">
-        <div class="eyebrow">Process</div>
-        <h2>How IDRS Works</h2>
-        <p>A structured approach guiding parties from initial engagement through to final resolution.</p>
-      </div>
-      <div class="process-grid">
-        <div class="process-step">
-          <div class="step-number">Step 01</div>
-          <h3>Pre-Filing Strategy</h3>
-          <p>Initial assessment and strategy formulation, identifying the most appropriate resolution forum and procedural approach.</p>
-        </div>
-        <div class="process-step">
-          <div class="step-number">Step 02</div>
-          <h3>Discovery &amp; Investigation</h3>
-          <p>Thorough investigation of technical and commercial matters, gathering evidence and analysing quantum, delay, and causation.</p>
-        </div>
-        <div class="process-step">
-          <div class="step-number">Step 03</div>
-          <h3>Active Proceedings</h3>
-          <p>Expert conduct of the chosen process — arbitration, mediation, determination, or dispute board proceedings.</p>
-        </div>
-        <div class="process-step">
-          <div class="step-number">Step 04</div>
-          <h3>Resolution</h3>
-          <p>Delivery of final awards, determinations, or facilitated settlements, enabling closure and resumption of operations.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<footer>
+  <div class="wrap foot-grid">
+    <div class="name">International Dispute<br>Resolution Services</div>
+    <div class="meta">Managed &amp; operated by <a href="https://www.expertservices.international" target="_blank" rel="noopener">Expert Services International</a><br>© 2026 · <a href="contact.html">Enquiries</a></div>
+  </div>
+</footer>
 
-  <!-- About — Split layout with image -->
-  <section class="about-split" id="about">
-    <div class="about-image" role="img" aria-label="Modern architectural building"></div>
-    <div class="about-content">
-      <div class="eyebrow">Principal</div>
-      <h2>Neil Kirkpatrick</h2>
-      <p>Chartered Quantity Surveyor, Chartered Construction Manager, Arbitrator, Adjudicator, Expert Determiner, Mediator, and Expert Witness with over twenty-five years of experience in construction disputes valued in excess of $150 million across Australia, Asia, and the United Kingdom.</p>
-      <p>Neil holds a Master of Laws (LL.M.) in International Commercial Law with Distinction and a Diploma in International Commercial Arbitration (DipICArb). He is accredited as an arbitrator, mediator, expert determiner, and adjudicator across multiple jurisdictions.</p>
-      <ul class="credentials-list">
-        <li>Fellow, Chartered Institute of Arbitrators (FCIArb) — International Arbitration Pathway</li>
-        <li>Fellow, Royal Institution of Chartered Surveyors (FRICS) — Dispute Resolution Faculty</li>
-        <li>Fellow, Chartered Institute of Building (FCIOB) — Chartered Construction Manager</li>
-        <li>Fellow, Resolution Institute (FRI) — Chair, NSW Determinative Committee</li>
-        <li>Resolution Institute Accredited Arbitrator (Grade 2)</li>
-        <li>Advanced Dispute Board Member Certificate (DRBF)</li>
-        <li>Founding Member &amp; Chairman, Construction Arbitration Centre Asia Pacific</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Stats -->
-  <section class="section section-surface">
-    <div class="container">
-      <div class="stat-row" style="border-top:none; max-width:720px; margin:0 auto; border:1px solid #e2e6eb; border-radius:8px; overflow:hidden;">
-        <div class="stat-box">
-          <div class="number">25+</div>
-          <div class="label">Years Experience</div>
-        </div>
-        <div class="stat-box">
-          <div class="number">3</div>
-          <div class="label">Global Regions</div>
-        </div>
-        <div class="stat-box">
-          <div class="number">44+</div>
-          <div class="label">Protocols</div>
-        </div>
-        <div class="stat-box" style="border-right:none;">
-          <div class="number">12</div>
-          <div class="label">Sectors</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Jurisdictions -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header centered">
-        <div class="eyebrow">Jurisdictions</div>
-        <h2>Regions &amp; Jurisdictions</h2>
-        <p>IDRS accepts appointments across the Asia-Pacific region and the United Kingdom.</p>
-      </div>
-      <div class="regions-grid" style="max-width:720px; margin:0 auto;">
-        <div class="region-card"><div class="city">Sydney</div><div class="country">Australia</div></div>
-        <div class="region-card"><div class="city">Hong Kong</div><div class="country">SAR China</div></div>
-        <div class="region-card"><div class="city">Singapore</div><div class="country">Singapore</div></div>
-        <div class="region-card"><div class="city">Kuala Lumpur</div><div class="country">Malaysia</div></div>
-        <div class="region-card"><div class="city">Tokyo</div><div class="country">Japan</div></div>
-        <div class="region-card"><div class="city">Bangkok</div><div class="country">Thailand</div></div>
-        <div class="region-card"><div class="city">Manila</div><div class="country">Philippines</div></div>
-        <div class="region-card"><div class="city">London</div><div class="country">United Kingdom</div></div>
-      </div>
-      <div style="text-align:center; margin-top:32px;">
-        <a href="pages/jurisdictions.html" class="btn btn-secondary" style="color:#0a3d5c; border-color:#0a3d5c;">View Jurisdictional Frameworks</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA — Split with image -->
-  <section class="cta-banner">
-    <div class="cta-inner container-wide">
-      <div class="cta-content">
-        <h2>Resolve Your Dispute Efficiently</h2>
-        <p>Contact IDRS to discuss how our expertise in arbitration, mediation, expert determination, and dispute boards can support your matter.</p>
-        <a href="pages/contact.html" class="btn btn-primary">Get in Touch</a>
-      </div>
-      <div class="cta-image" role="img" aria-label="Modern commercial building"></div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="brand">IDRS</div>
-          <p>International Dispute Resolution Services. Independent, expert dispute resolution for construction, infrastructure, and commercial disputes across the Asia-Pacific region.</p>
-        </div>
-        <div>
-          <h4>Services</h4>
-          <ul>
-            <li><a href="pages/expert-determination.html">Expert Determination</a></li>
-            <li><a href="pages/arbitration.html">Commercial Arbitration</a></li>
-            <li><a href="pages/mediation.html">Commercial Mediation</a></li>
-            <li><a href="pages/dispute-boards.html">Dispute Boards</a></li>
-            <li><a href="pages/conciliation.html">Conciliation</a></li>
-          <li><a href="pages/jurisdictions.html">Jurisdictions</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="pages/about.html">About IDRS</a></li>
-            <li><a href="pages/about.html#credentials">Credentials</a></li>
-            <li><a href="pages/contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Contact</h4>
-          <ul>
-            <li style="color:rgba(255,255,255,0.45);">Level 15, 225 George Street</li>
-            <li style="color:rgba(255,255,255,0.45);">Sydney, NSW 2000, Australia</li>
-            <li style="margin-top:10px;"><a href="tel:+61290579088">+61 (0) 2 9057 9088</a></li>
-            <li><a href="mailto:contact@idrs.com.au">contact@idrs.com.au</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        &copy; 2026 IDRS &mdash; International Dispute Resolution Services. All rights reserved.
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    const header = document.getElementById('site-header');
-    window.addEventListener('scroll', () => {
-      header.classList.toggle('scrolled', window.scrollY > 20);
-    });
-    // Mobile dropdown toggle
-    document.querySelectorAll('.has-dropdown > a').forEach(a => {
-      a.addEventListener('click', (e) => {
-        if (window.innerWidth <= 768) {
-          e.preventDefault();
-          a.parentElement.classList.toggle('open');
-        }
+<script>
+  /* Equalise the two masthead lines by letter-tracking (not word gaps) */
+  function fitWordmark(){
+    document.querySelectorAll('.wordmark').forEach(wm=>{
+      const spans=[...wm.querySelectorAll('span')];
+      if(spans.length<2) return;
+      spans.forEach(s=>s.style.letterSpacing='0px');
+      const widths=spans.map(s=>s.getBoundingClientRect().width);
+      const target=Math.max(...widths)*1.05;
+      spans.forEach((s,i)=>{
+        const n=s.textContent.length; if(n<2) return;
+        let ls=(target-widths[i])/(n-1);
+        s.style.letterSpacing=ls+'px';
+        const w2=s.getBoundingClientRect().width;      // one correction pass
+        s.style.letterSpacing=(ls+(target-w2)/(n-1))+'px';
       });
     });
-  </script>
+  }
+  if(document.fonts&&document.fonts.ready){document.fonts.ready.then(fitWordmark);}
+  addEventListener('load',fitWordmark); addEventListener('resize',fitWordmark);
 
+  const hdr=document.getElementById('hdr'), prog=document.getElementById('prog');
+  addEventListener('scroll',()=>{
+    hdr.classList.toggle('solid',scrollY>40);
+    const h=document.documentElement; prog.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
+  });
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.15});
+  document.querySelectorAll('.rv:not(.in)').forEach(el=>io.observe(el));
+</script>
 </body>
 </html>
