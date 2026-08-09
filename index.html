@@ -46,29 +46,38 @@
   .wrap{max-width:1760px;margin-inline:auto;padding-inline:var(--inset)}
 
   /* floating frosted bar */
-  .floatbar{position:sticky;top:16px;z-index:50;
+  .floatbar{position:fixed;top:0;left:0;right:0;z-index:50;
     width:calc(100% - (var(--edge) * 2));max-width:calc(1760px - (var(--edge) * 2));margin:16px auto 0;
     display:flex;align-items:center;justify-content:space-between;gap:20px;
     padding:14px var(--pad);border-radius:4px;
-    background:rgba(255,255,255,.5);
-    -webkit-backdrop-filter:blur(20px) saturate(170%);backdrop-filter:blur(20px) saturate(170%);
+    background:rgba(255,255,255,.26);
+    -webkit-backdrop-filter:blur(12px) saturate(150%);backdrop-filter:blur(12px) saturate(150%);
+    transition:background .4s var(--ease),border-color .4s,box-shadow .4s;
     border:1px solid rgba(255,255,255,.55);
     box-shadow:0 10px 34px -14px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.6);}
-  .wordmark{font-family:var(--f);font-size:clamp(14px,1.5vw,17px);font-weight:700;line-height:1.14;color:var(--ink)}
+  .wordmark{font-family:var(--f);font-size:clamp(14px,1.5vw,17px);font-weight:700;line-height:1.14;color:var(--ink);transition:color .35s}
   .wordmark span{display:block;width:max-content;white-space:nowrap}
   .fnav{display:flex;align-items:center;gap:28px}
-  .fnav a{font-family:var(--m);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--grey);transition:color .3s;position:relative}
+  .fnav a{font-family:var(--m);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#3f4147;transition:color .3s;position:relative}
   .fnav a:not(.cta)::after{content:"";position:absolute;left:0;bottom:-5px;height:1px;width:0;background:var(--ink);transition:width .35s var(--ease)}
   .fnav a:not(.cta):hover::after{width:100%}
   .fnav a:hover{color:var(--ink)}
   .fnav a.cta{color:var(--ink);border:1px solid rgba(11,11,11,.28);padding:9px 16px;transition:.3s}
   .fnav a.cta:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+  /* adaptive tone while the bar sits over the dark hero */
+  .floatbar.over-hero{border-color:rgba(255,255,255,.28);box-shadow:0 12px 40px -16px rgba(0,0,0,.6), inset 0 1px 0 rgba(255,255,255,.22)}
+  .floatbar.over-hero .wordmark{color:#f4f4f2}
+  .floatbar.over-hero .fnav a{color:rgba(244,244,242,.82)}
+  .floatbar.over-hero .fnav a:hover{color:#fff}
+  .floatbar.over-hero .fnav a:not(.cta)::after{background:#fff}
+  .floatbar.over-hero .fnav a.cta{color:#f4f4f2;border-color:rgba(255,255,255,.5)}
+  .floatbar.over-hero .fnav a.cta:hover{background:#fff;color:#0b0b0b;border-color:#fff}
   @media(max-width:760px){ .fnav a:not(.cta){display:none} }
 
   main{position:relative;z-index:1}
 
   /* DARK VIDEO HERO */
-  .hero{position:relative;min-height:100svh;margin-top:-78px;display:flex;flex-direction:column;justify-content:center;
+  .hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;
     padding:150px 0 96px;background:var(--dark);overflow:hidden}
   .hero canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;display:block}
   .hero .scrim{position:absolute;inset:0;z-index:1;pointer-events:none;
@@ -292,6 +301,14 @@
     }
     if(document.fonts&&document.fonts.ready){document.fonts.ready.then(fitWordmark);}
     addEventListener('load',fitWordmark); addEventListener('resize',fitWordmark);
+
+    /* nav tone: white over the dark hero, dark once on the white content */
+    (function(){
+      const bar=document.querySelector('.floatbar'), heroEl=document.querySelector('.hero');
+      if(!bar||!heroEl) return;
+      function tone(){ bar.classList.toggle('over-hero', heroEl.getBoundingClientRect().bottom>90); }
+      tone(); addEventListener('scroll',tone,{passive:true}); addEventListener('resize',tone);
+    })();
 
     /* scroll reveal */
     const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.15});
