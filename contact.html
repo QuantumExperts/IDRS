@@ -122,7 +122,11 @@
     <div class="body">
       <!-- FORM -->
       <div class="rv">
-        <form id="enquiry-form" novalidate>
+        <form id="enquiry-form" name="idrs-enquiry" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
+          <input type="hidden" name="form-name" value="idrs-enquiry">
+          <input type="hidden" name="source" value="IDRS">
+          <input type="hidden" name="operatedBy" value="Expert Services International">
+          <p hidden><label>Leave this field empty: <input name="bot-field"></label></p>
           <span class="label">Submit an enquiry</span>
           <div class="field">
             <label for="name">Full name</label>
@@ -172,31 +176,17 @@
 </footer>
 
 <script>
-  /* ---- Enquiry form → ESI SharePoint enquiry register (via Power Automate) ----
-     Paste ESI's existing "When an HTTP request is received" flow URL below to go live.
-     Submissions are tagged source:"IDRS" so they log as IDRS enquiries in the ESI register. */
-  const ENQUIRY_ENDPOINT = ""; // e.g. "https://prod-xx.westus.logic.azure.com/workflows/.../triggers/manual/paths/invoke?..."
-
+  /* ---- Enquiry form → Netlify Forms (dashboard + email notification, tagged source:IDRS) ---- */
   const form=document.getElementById('enquiry-form'), btn=document.getElementById('submit-btn'), msg=document.getElementById('form-msg');
   function show(text,type){ msg.textContent=text; msg.className='form-msg show '+type; }
 
   form.addEventListener('submit', async (e)=>{
     e.preventDefault();
     if(!form.checkValidity()){ show('Please complete the required fields.','err'); return; }
-    const payload={
-      name:form.name.value.trim(), organisation:form.organisation.value.trim(),
-      email:form.email.value.trim(), matter:form.matter.value.trim(),
-      submittedAt:new Date().toISOString(),
-      source:'IDRS', origin:'International Dispute Resolution Services', operatedBy:'Expert Services International'
-    };
-    if(!ENQUIRY_ENDPOINT){
-      show('Form is ready — connect the SharePoint / Power Automate endpoint to start logging enquiries.','ok');
-      console.log('Enquiry payload (no endpoint configured):', payload);
-      return;
-    }
     btn.disabled=true; show('Sending…','ok');
     try{
-      const r=await fetch(ENQUIRY_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+      const body=new URLSearchParams(new FormData(form)).toString();
+      const r=await fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body});
       if(!r.ok) throw new Error(r.status);
       form.reset(); show('Thank you. Your enquiry has been received — we will respond shortly.','ok');
     }catch(err){
